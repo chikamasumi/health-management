@@ -1,0 +1,13 @@
+<h2>体調入力フォーム</h2>
+<%= form_with model:@condition, local:true do |f| %>
+  <h4>体温</h4>
+  <%= f.text_field :temperature %>
+
+  <h4>体調不良はありますか？（咳や倦怠感など）</h4>
+
+  <h4>備考</h4>
+  <%= f.text_area :remake %>
+
+  <%= f.submit '登録' %>
+
+<% end %>
