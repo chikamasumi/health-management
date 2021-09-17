@@ -1,19 +1,20 @@
-<h2>体調入力一覧</h2>
+<h2>体調履歴一覧</h2>
 <table class="table table-striped">
   <thead>
     <th width="200" heigth="24">登録日</th>
+    <th width="200" heigth="24">氏名</th>
     <th width="200" heigth="24">体温</th>
     <th width="200" heigth="24">体調不良</th>
-    <th width="400" heigth="24">詳細</th>
+    <th width="200" heigth="24"></th>
   </thead>
   <tbody>
-    <% @condition.each do |condition| %>
+    <% @conditions.each do |condition| %>
       <tr>
         <td><%= condition.created_at.strftime('%Y/%m/%d') %></td>
+        <td><%= condition.user.last_name %><%= condition.user.first_name %></td>
         <td><%= condition.temperature %></td>
-        <td><%#= condition.condition_i18n %></td>
         <td><%= condition_text(condition) %></td>
-        <td><%= condition.remark %></td>
+        <td><%= link_to '詳細', admin_condition_path(condition), class:'btn' %></td>
       </tr>
     <% end %>
   </tbody>

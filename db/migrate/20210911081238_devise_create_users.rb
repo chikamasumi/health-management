@@ -37,6 +37,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :last_name_kana
       t.string :first_name_kana
       t.string :telephone_number
+      t.boolean "is_active", default: true, null: false
 
       t.timestamps null: false
     end

@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 2021_09_11_105250) do
   create_table "conditions", force: :cascade do |t|
     t.integer "user_id"
     t.integer "temperature"
-    t.boolean "condition"
-    t.string "remake"
+    t.boolean "condition", default: true, null: false
+    t.string "remark"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2021_09_11_105250) do
     t.string "last_name_kana"
     t.string "first_name_kana"
     t.string "telephone_number"
+    t.boolean "is_active", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

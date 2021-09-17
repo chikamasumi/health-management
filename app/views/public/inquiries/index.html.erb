@@ -1,0 +1,15 @@
+<h2>問い合わせ一覧</h2>
+<table class="table table-striped">
+  <thead>
+    <th width="200" heigth="24">日時</th>
+    <th width="200" heigth="24">タイトル</th>
+  </thead>
+  <tbody>
+    <% @inquiry.each do |inquiry| %>
+      <tr>
+        <td><%= inquiry.created_at.strftime('%Y/%m/%d') %></td>
+        <td><%= inquiry.title %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

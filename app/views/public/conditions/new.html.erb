@@ -1,12 +1,24 @@
 <h2>体調入力フォーム</h2>
-<%= form_with model:@condition, local:true do |f| %>
+<% if @condition.errors.any? %>
+  <%= @condition.errors.count %>件のエラーが発生しました
+  <% @condition.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
+<%= form_with model: @condition, url: conditions_path, local:true do |f| %>
   <h4>体温</h4>
-  <%= f.text_field :temperature %>
+  <%= f.text_field :temperature %>度
 
   <h4>体調不良はありますか？（咳や倦怠感など）</h4>
+  <%#= form_with(model: @condition, local: true) do |f| %>
+    <%= f.radio_button :condition, 1 %>
+    <%= f.label :condition, "はい", {value: 1, style: "display: inline-block"} %>
+    <%= f.radio_button :condition, 0 %>
+    <%= f.label :condition, "いいえ", {value: 0, style: "display: inline-block"} %>
+  <%# end %>
 
   <h4>備考</h4>
-  <%= f.text_area :remake %>
+  <%= f.text_area :remark %>
 
   <%= f.submit '登録' %>
 

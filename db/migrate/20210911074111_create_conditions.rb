@@ -3,8 +3,8 @@ class CreateConditions < ActiveRecord::Migration[5.2]
     create_table :conditions do |t|
       t.integer :user_id
       t.integer :temperature
-      t.boolean :condition
-      t.string :remake
+      t.boolean :condition, default: true, null: false
+      t.string :remark
 
       t.timestamps
     end

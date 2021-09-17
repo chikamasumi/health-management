@@ -10,4 +10,15 @@ module ApplicationHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:admin]
   end
+
+
+  def condition_text(condition)
+    if condition.condition
+      "はい"
+    else
+      "いいえ"
+    end
+  end
+
+
 end
