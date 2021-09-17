@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        last_name: 姓
+        first_name: 名
+        last_name_kana: セイ
+        first_name_kana: メイ
+        telephone_number: 電話番号
+        email: メールアドレス
+        password: パスワード
+
+ja:
+  activerecord:
+    attributes:
+      condition:
+        temperature: 体温
