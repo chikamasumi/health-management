@@ -5,3 +5,21 @@
   <p>電話番号：<%= @user.telephone_number %></p>
   <p>メールアドレス：<%= @user.email %></p>
 </div>
+<table>
+  <thead>
+    <th width="200" heigth="24">登録日</th>
+    <th width="200" heigth="24">体温</th>
+    <th width="200" heigth="24">体調不良</th>
+    <th width="400" heigth="24">詳細</th>
+  </thead>
+  <tbody>
+    <% @conditions.each do |condition| %>
+    <tr>
+      <td><%= condition.created_at.strftime('%Y/%m/%d') %></td>
+      <td><%= condition.temperature %></td>
+      <td><%= condition_text(condition) %></td>
+      <td><%= condition.remark %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :inquiries, only: [:new, :index, :show, :create] do
       collection do
         post :confirm
-        post :compleate
+        get :compleate
       end
     end
     devise_for :users, :controllers => {
@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :edit, :update]
   end
 
+  get 'admin/users/search' => 'admin/users#search' , as: 'admin_user_search'
+  get 'admin/inquiries/search' => 'admin/inquiries#search' , as: 'admin_inquiry_search'
   namespace :admin do
     root to: 'homes#top'
     resources :conditions, only: [:show]
@@ -35,4 +37,3 @@ Rails.application.routes.draw do
     registrations: 'admin/registrations'
   }
 end
-#get 'search' => 'posts#search'

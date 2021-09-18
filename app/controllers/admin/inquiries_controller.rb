@@ -1,7 +1,13 @@
 class Admin::InquiriesController < ApplicationController
   before_action :authenticate_admin!
   def index
-    @inquiries = inquiry.all.order(created_at: :desc)
+    @inquiries = Inquiry.all.order(created_at: :desc)
+  end
+
+  def search
+    @inquiries = Inquiry.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "index"
   end
 
   def show

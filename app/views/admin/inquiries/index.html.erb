@@ -1,4 +1,10 @@
 <h2>問い合わせ一覧</h2>
+<div class="search-form">
+  <%= form_with url: admin_inquiry_search_path, method: :get, local: true do |f| %>
+    <%= f.text_field :keyword, value: @keyword %>
+    <%= f.submit "検索" %>
+  <% end %>
+</div>
 <table class="table table-striped">
   <thead>
     <th width="200" heigth="24">日付</th>
@@ -9,7 +15,11 @@
     <% @inquiries.each do |inquiry| %>
       <tr>
         <td><%= inquiry.created_at.strftime('%Y/%m/%d') %></td>
-        <td><%= inquiry.user.last_name %><%= inquiry.user.first_name %></td>
+        <td>
+          <%= link_to admin_inquiry_path(inquiry) do %>
+            <%= inquiry.user.last_name %><%= inquiry.user.first_name %>
+          <% end %>
+        </td>
         <td><%= inquiry.title %></td>
       </tr>
     <% end %>

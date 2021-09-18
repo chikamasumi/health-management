@@ -17,8 +17,14 @@ class Public::InquiriesController < ApplicationController
     #@inquiry.user_id = current_user.id
   end
 
+  
+
   def index
     @inquiry = current_user.inquiries.order(created_at: :desc)
+  end
+
+  def show
+    @inquiry = Inquiry.find(params[:id])
   end
 
   private

@@ -1,17 +1,12 @@
 <h2>問い合わせ内容確認画面</h2>
-  <%#= form_for @inquiry do |f| %>
     <h4>タイトル</h4>
     <%= @inquiry.title %>
     <h4>問い合わせ内容</h4>
     <%= @inquiry.body %>
 
-    <p><%#= f.submit '入力画面に戻る', name: 'back' %></p>
-    <p><%#= f.submit '送信' %></p>
-
-  <%# end %>
-  <%= form_for @inquiry, method: :post, url: compleate_inquiries_path do |form| %>
-	  <%= form.hidden_field :title %>
-	  <%= form.hidden_field :body %>
-	  <%= form.hidden_field :user_id %>
-	  <%= form.submit '送信する' %>
+  <%= form_for @inquiry, method: :post, url: inquiries_path do |f| %>
+	  <%= f.hidden_field :title %>
+	  <%= f.hidden_field :body %>
+	  <%= f.hidden_field :user_id, value: @user_id %>
+	  <%= f.submit '送信する' %>
   <% end %>

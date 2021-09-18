@@ -12,5 +12,7 @@ class Admin::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    #@condition = Condition.find_by(: params[:id])
+    @conditions = User.find(params[:id]).conditions
   end
 end

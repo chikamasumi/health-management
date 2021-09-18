@@ -8,7 +8,11 @@
     <% @inquiry.each do |inquiry| %>
       <tr>
         <td><%= inquiry.created_at.strftime('%Y/%m/%d') %></td>
-        <td><%= inquiry.title %></td>
+        <td>
+          <%= link_to inquiry_path(inquiry) do %>
+            <%= inquiry.title %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

@@ -11,4 +11,8 @@ class User < ApplicationRecord
   validates :last_name_kana, presence: true
   validates :first_name_kana, presence: true
   validates :telephone_number, presence: true
+
+  def self.search(keyword)
+    where(["last_name like? OR first_name like? OR last_name_kana like? OR first_name_kana like?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%"])
+  end
 end

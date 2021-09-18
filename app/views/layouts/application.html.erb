@@ -18,39 +18,39 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
                 <li>
-                  <%= link_to '体調一覧', conditions_path %>
+                  <%= link_to '体調一覧', conditions_path, class:"btn btn-light border rounded-lg border-secondary text-dark" %>
                 </li>
                 <li>
-                  <%= link_to '問い合わせ一覧', inquiries_path %>
+                  <%= link_to '問い合わせ一覧', inquiries_path, class:"btn btn-light border rounded-lg border-secondary text-dark" %>
                 </li>
                 <li>
-                  <%= link_to 'マイページ', user_path(current_user.id) %>
+                  <%= link_to 'マイページ', user_path(current_user.id), class:"btn btn-light border rounded-lg border-secondary text-dark" %>
                 </li>
                 <li>
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"btn btn-light border rounded-lg border-secondary text-dark" %>
                 </li>
               <% elsif admin_signed_in? then %>
                 <li>
-                  <%= link_to '体調一覧', admin_root_path %>
+                  <%= link_to '体調一覧', admin_root_path, class:"btn btn-light border rounded-lg border-secondary text-dark" %>
                 </li>
                 <li>
-                  <%= link_to '問い合わせ一覧', admin_inquiries_path %>
+                  <%= link_to '問い合わせ一覧', admin_inquiries_path, class:"btn btn-light border rounded-lg border-secondary text-dark" %>
                 </li>
                 <li>
-                  <%= link_to '社員一覧', admin_users_path %>
+                  <%= link_to '社員一覧', admin_users_path, class:"btn btn-light border rounded-lg border-secondary text-dark" %>
                 </li>
                 <li>
-                  <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+                  <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class:"btn btn-light border rounded-lg border-secondary text-dark" %>
                 </li>
               <% else %>
                 <li>
                   <%= link_to 'About', about_path, class:"btn btn-light border rounded-lg border-secondary text-dark" %>
                 </li>
                 <li>
-                  <%= link_to "新規登録", new_user_registration_path %>
+                  <%= link_to "新規登録", new_user_registration_path, class:"btn btn-light border rounded-lg border-secondary text-dark" %>
                 </li>
                 <li>
-                  <%= link_to "ログイン", new_user_session_path %>
+                  <%= link_to "ログイン", new_user_session_path, class:"btn btn-light border rounded-lg border-secondary text-dark" %>
                 </li>
               <% end %>
             </ul>
