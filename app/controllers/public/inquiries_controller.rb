@@ -8,16 +8,17 @@ class Public::InquiriesController < ApplicationController
   def create
     @inquiry = Inquiry.new(inquiry_params)
     @inquiry.user_id = current_user.id
-    @inquiry.save
-    redirect_to compleate_inquiries_path
+    if @inquiry.save
+      redirect_to compleate_inquiries_path
+    else
+      render :new
+    end
   end
 
   def confirm
     @inquiry = Inquiry.new(inquiry_params)
     #@inquiry.user_id = current_user.id
   end
-
-  
 
   def index
     @inquiry = current_user.inquiries.order(created_at: :desc)

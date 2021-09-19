@@ -1,6 +1,12 @@
 <h2>問い合わせ詳細</h2>
-<div>
-  <p>氏名：<%= @inquiry.user.last_name %><%= @inquiry.user.first_name %></p>
-  <p>タイトル：<%= @inquiry.title %></p>
-  <p>内容：<%= @inquiry.body %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <div>
+        <p>氏名：<%= @inquiry.user.last_name %><%= @inquiry.user.first_name %></p>
+        <p>タイトル：<%= @inquiry.title %></p>
+        <p>内容：<%= @inquiry.body %></p>
+      </div>
+    </div>
+  </div>
 </div>

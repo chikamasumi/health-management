@@ -13,7 +13,11 @@
     <header>
       <nav class="navbar navbar-expand-lg border-bottom border-dark">
         <div class="container">
-          <span><%= link_to "HOME", root_path, class:"navbar-brand border border-dark text-dark" %></span>
+          <span>
+            <%= link_to root_path, class:"navbar-brand border border-dark text-dark" do %>
+              <%= image_tag 'logo.jpg', class: 'icon' %>
+            <% end %>
+          </span>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>

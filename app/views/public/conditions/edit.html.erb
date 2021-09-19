@@ -1,21 +1,27 @@
-<h2>体調編集</h2>
-<%= form_with model: @condition, local:true do |f| %>
-  <div>
-    <p>体温</p>
-    <p><%= f.text_area :temperature %>度</p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <h2>体調編集</h2>
+      <%= form_with model: @condition, local:true do |f| %>
+        <div>
+          <p>体温</p>
+          <p><%= f.text_field :temperature %>度</p>
+        </div>
+        <div>
+          <p>体調不良がありますか？</p>
+          <p>
+            <%= f.radio_button :condition, :true %>
+            <%= f.label :condition, "はい", {value: :true, style: "display: inline-block;"} %>
+            <%= f.radio_button :condition, :false %>
+            <%= f.label :condition, "いいえ", {value: :false, style: "display: inline-block;"} %>
+          </p>
+        </div>
+        <div>
+          <p>詳細</p>
+          <p><%= f.text_area :remark %></p>
+        </div>
+        <%= f.submit '変更内容を保存', class:'btn btn-secondary' %>
+      <% end %>
+    </div>
   </div>
-  <div>
-    <p>体調不良がありますか？</p>
-    <p>
-      <%= f.radio_button :condition, :true %>
-      <%= f.label :condition, "はい", {value: :true, style: "display: inline-block;"} %>
-      <%= f.radio_button :condition, :false %>
-      <%= f.label :condition, "いいえ", {value: :false, style: "display: inline-block;"} %>
-    </p>
-  </div>
-  <div>
-    <p>詳細</p>
-    <p><%= f.text_field :remark %></p>
-  </div>
-  <%= f.submit '変更内容を保存', class:'btn btn-secondary' %>
-<% end %>
+</div>

@@ -15,12 +15,12 @@
     <% @inquiries.each do |inquiry| %>
       <tr>
         <td><%= inquiry.created_at.strftime('%Y/%m/%d') %></td>
+        <td><%= inquiry.user.last_name %><%= inquiry.user.first_name %></td>
         <td>
           <%= link_to admin_inquiry_path(inquiry) do %>
-            <%= inquiry.user.last_name %><%= inquiry.user.first_name %>
+            <%= inquiry.title %>
           <% end %>
         </td>
-        <td><%= inquiry.title %></td>
       </tr>
     <% end %>
   </tbody>

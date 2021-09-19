@@ -4,15 +4,17 @@
     <th width="200" heigth="24">登録日</th>
     <th width="200" heigth="24">体温</th>
     <th width="200" heigth="24">体調不良</th>
-    <th width="400" heigth="24">詳細</th>
+    <th width="400" heigth="24">備考</th>
+    <th width="200" heigth="24"></th>
   </thead>
   <tbody>
     <% @condition.each do |condition| %>
       <tr>
         <td><%= condition.created_at.strftime('%Y/%m/%d') %></td>
-        <td><%= condition.temperature %></td>
+        <td><%= condition.temperature %>度</td>
         <td><%= condition_text(condition) %></td>
         <td><%= condition.remark %></td>
+        <td><%= link_to '編集する', edit_condition_path(condition), class:'btn btn-sm btn-success' %></td>
       </tr>
     <% end %>
   </tbody>
