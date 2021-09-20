@@ -15,3 +15,10 @@ ja:
     attributes:
       condition:
         temperature: 体温
+
+ja:
+  activerecord:
+    attributes:
+      inquiry:
+        title: タイトル
+        body: 問い合わせ内容

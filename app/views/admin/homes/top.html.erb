@@ -14,7 +14,7 @@
         <td><%= condition.user.last_name %><%= condition.user.first_name %></td>
         <td><%= condition.temperature %></td>
         <td><%= condition_text(condition) %></td>
-        <td><%= link_to '詳細', admin_condition_path(condition), class:'btn' %></td>
+        <td><%= link_to '詳細', admin_condition_path(condition) %></td>
       </tr>
     <% end %>
   </tbody>

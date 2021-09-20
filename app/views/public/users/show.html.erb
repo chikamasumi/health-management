@@ -1,8 +1,14 @@
-<h2>マイページ</h2>
-<%= link_to '編集する', edit_user_path(@user.id), class:'btn btn-sm btn-success' %>
-<div>
-  <p>氏名：<%= @user.last_name %><%= @user.first_name %></p>
-  <p>カナ：<%= @user.last_name_kana %><%= @user.first_name_kana %></p>
-  <p>電話番号：<%= @user.telephone_number %></p>
-  <p>メールアドレス：<%= @user.email %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <h2>マイページ</h2>
+      <%= link_to '編集する', edit_user_path(@user.id), class:'btn btn-sm btn-success' %>
+      <div>
+        <p>氏名：<%= @user.last_name %><%= @user.first_name %></p>
+        <p>カナ：<%= @user.last_name_kana %><%= @user.first_name_kana %></p>
+        <p>電話番号：<%= @user.telephone_number %></p>
+        <p>メールアドレス：<%= @user.email %></p>
+      </div>
+    </div>
+  </div>
 </div>

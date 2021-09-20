@@ -1,4 +1,9 @@
 <h2>体調入力一覧</h2>
+  <% if flash[:notice] %>
+  <div class="flash">
+    <%= flash[:notice] %>
+  </div>
+  \<% end %>
 <table class="table table-striped">
   <thead>
     <th width="200" heigth="24">登録日</th>

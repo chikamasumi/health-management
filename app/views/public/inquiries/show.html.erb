@@ -1,6 +1,12 @@
-<h2>問い合わせ詳細</h2>
-<div>
-  <p>日付：<%= @inquiry.created_at.strftime('%Y/%m/%d') %></p>
-  <p>タイトル：<%= @inquiry.title %></p>
-  <p>本文：<%= @inquiry.body %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <h2>問い合わせ詳細</h2>
+      <div>
+        <p>日付：<%= @inquiry.created_at.strftime('%Y/%m/%d') %></p>
+        <p>タイトル：<%= @inquiry.title %></p>
+        <p>本文：<%= @inquiry.body %></p>
+      </div>
+    </div>
+  </div>
 </div>

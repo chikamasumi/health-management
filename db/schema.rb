@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_09_11_105250) do
 
   create_table "conditions", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "temperature"
+    t.float "temperature"
     t.boolean "condition", default: true, null: false
     t.string "remark"
     t.datetime "created_at", null: false

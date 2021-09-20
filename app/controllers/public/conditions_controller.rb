@@ -17,6 +17,7 @@ class Public::ConditionsController < ApplicationController
     @condition = Condition.new(condition_params)
     @condition.user_id = current_user.id
     if @condition.save
+      flash[:notice] = "入力完了！ご協力ありがとうございます！"
       redirect_to conditions_path
     else
       render :new

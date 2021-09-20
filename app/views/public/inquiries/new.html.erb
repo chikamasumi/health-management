@@ -1,13 +1,14 @@
-<h2>問い合わせフォーム</h2>
-<% if @inquiry.errors.any? %>
-  <%= @inquiry.errors.count %>件のエラーが発生しました
-  <% @inquiry.errors.full_messages.each do |message| %>
-    <%= message %>
-  <% end %>
-<% end %>
 <div class="container">
   <div class="row">
     <div class="col-lg-8">
+      <h2>問い合わせフォーム</h2>
+      <% if @inquiry.errors.any? %>
+        <%= @inquiry.errors.count %>件のエラーが発生しました
+        <% @inquiry.errors.full_messages.each do |message| %>
+          <%= message %>
+        <% end %>
+      <% end %>
+
       <%= form_with model:@inquiry, url: confirm_inquiries_path, local:true do |f| %>
         <h4>タイトル</h4>
         <%= f.text_field :title %>
